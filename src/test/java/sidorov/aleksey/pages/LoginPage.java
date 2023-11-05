@@ -12,6 +12,9 @@ public class LoginPage {
     public SelenideElement loginButton = $("#login-button");
     public SelenideElement loginCredentials = $("#login_credentials");
     public SelenideElement passwordCredentials = $(".login_password");
+    public SelenideElement errorLoginContainer = $(".error-message-container");
+    public SelenideElement errorMessage = errorLoginContainer.find("[data-test='error']");
+    public SelenideElement refreshErrorButton = errorLoginContainer.find(".error-button");
 
     public String getCreds(SelenideElement element){
         return element.getText().split("\n")[1];
