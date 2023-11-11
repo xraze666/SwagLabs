@@ -1,6 +1,7 @@
 package sidorov.aleksey.tests;
 
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
@@ -15,11 +16,12 @@ public class LogInTest extends TestBase{
     LoginPage loginPage = new LoginPage();
     MainPage mainPage = new MainPage();
     @Test
-    @DisplayName("Login with correct login/password")
+    @Owner("Aleksey Sidorov")
+    @DisplayName("Авторизация под корректной учетной записью")
     @Severity(SeverityLevel.CRITICAL)
     public void login()
     {
-        step("Открываем страницу авторизации", ()->{
+        step("Открытие страницы авторизации", ()->{
             loginPage
                     .openLoginPage()
                     .loginPageTitle.should(Condition.visible);
