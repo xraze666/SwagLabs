@@ -1,6 +1,7 @@
 package sidorov.aleksey.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -16,9 +17,11 @@ public class LoginPage {
     public SelenideElement errorMessage = errorLoginContainer.find("[data-test='error']");
     public SelenideElement refreshErrorButton = errorLoginContainer.find(".error-button");
 
-    public String getCreds(SelenideElement element){
+    @Step("Получить данные авторизации")
+    public String getCredentials(SelenideElement element){
         return element.getText().split("\n")[1];
     }
+    @Step("Открыть страницу авторизации")
     public LoginPage openLoginPage(){
         open("");
         return this;

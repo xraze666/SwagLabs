@@ -1,6 +1,7 @@
 package sidorov.aleksey.pageElements;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -12,6 +13,7 @@ public class PageHeader {
     public SelenideElement shoppingCartBadge = shoppingCartContainer.find(".shopping_cart_badge");
     public SelenideElement burgerMenuButton = headerContainer.find(".bm-burger-button");
 
+    @Step("На странице отображается заголовок {title}")
     public void checkTitle(String title){
         this.title.shouldHave(text(title));
     }

@@ -28,8 +28,8 @@ public class LogInTest extends TestBase{
         });
 
         step("Ввод учетных данных указанных на странице",()->{
-            loginPage.userName.setValue(loginPage.getCreds(loginPage.loginCredentials));
-            loginPage.password.setValue(loginPage.getCreds(loginPage.passwordCredentials));
+            loginPage.userName.setValue(loginPage.getCredentials(loginPage.loginCredentials));
+            loginPage.password.setValue(loginPage.getCredentials(loginPage.passwordCredentials));
             loginPage.loginButton.click();
         });
 
