@@ -1,9 +1,7 @@
 package sidorov.aleksey.tests;
 
 import com.codeborne.selenide.Condition;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import sidorov.aleksey.pages.LoginPage;
@@ -17,6 +15,8 @@ public class LogInTest extends TestBase{
     MainPage mainPage = new MainPage();
     @Test
     @Owner("Aleksey Sidorov")
+    @Feature("Авторизация")
+    @Story("Успешная авторизация")
     @DisplayName("Авторизация под корректной учетной записью")
     @Severity(SeverityLevel.CRITICAL)
     public void login()
