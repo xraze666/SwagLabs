@@ -4,15 +4,15 @@ import com.codeborne.selenide.Condition;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import sidorov.aleksey.pages.InventoryPage;
 import sidorov.aleksey.pages.LoginPage;
-import sidorov.aleksey.pages.MainPage;
 
 import static io.qameta.allure.Allure.step;
 
 
 public class LogInTest extends TestBase{
     LoginPage loginPage = new LoginPage();
-    MainPage mainPage = new MainPage();
+    InventoryPage inventoryPage = new InventoryPage();
     @Test
     @Owner("Aleksey Sidorov")
     @Feature("Авторизация")
@@ -34,7 +34,7 @@ public class LogInTest extends TestBase{
         });
 
         step("Проверка отображения главной страницы приложения",()->{
-            mainPage
+            inventoryPage
                     .getPageHeader()
                     .checkTitle("Swag Labs");
         });
